@@ -1,3 +1,13 @@
+#section{
+    position: relative;
+    width: 900px;
+    height: 500px;
+    border: 2px solid black;
+}
+
 #slide{
     list-style: none;
+    display: flex;
+    position: absolute;
+    
 }

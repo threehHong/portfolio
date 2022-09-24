@@ -15,15 +15,15 @@ function imageFn(){
         let li = slide.querySelectorAll('.img');
         
         // 맨뒤요소 맨앞 이동 : insertBefore(넣을놈, 넣을놈전놈);
-        slide.insertBefore(li[li.length-1], li[0]);
+        slide.insertBefore(li[2], li[0]); /* li[li.length-1] */
 
         /* slide.style.left = '-100%'; */
 
-        slide.style.left = '0';
+        /* slide.style.left = '0'; */
 
-        setTimeout(() => {
+       /*  setTimeout(() => {
             slide.appendChild(slide.querySelectorAll('.img'[0]));
-        }, 300);
+        }, 300); */
         
     }
 
@@ -37,9 +37,11 @@ function imageFn(){
         
         /* slide.style.transition = 'left .4s ease-in-out' */
 
-        setTimeout(() => {
+        slide.appendChild(slide.querySelectorAll('.img')[0]);
+
+        /* setTimeout(() => {
             slide.appendChild(slide.querySelectorAll('.img')[0]);
-        }, 300);
+        }, 300); */
 
     }
 

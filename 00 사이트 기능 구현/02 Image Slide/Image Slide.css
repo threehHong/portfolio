@@ -12,7 +12,7 @@ img{
 .section-imageslide{
     position: relative;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .imageslide{
     position: relative;
@@ -27,23 +27,24 @@ img{
 }
 
 .prev-arrow, .next-arrow{
-    position: absolute;
+    /* position: absolute; */
+    position: relative;
     top: 50%;
     font-size: 50px;
     font-weight: bold;
     cursor: pointer;
 }
 .next-arrow{
-    right: 0;
+    left: 93%;
 }
 
 .slide{
     list-style: none;
     display: flex;
     position: relative;
-   /*  top: 0;
-    left: 0;
-    width: 100%;
+    /* top: 0;
+    left: 0; */
+    /* width: 100%;
     height: 100%; */
 }
 .img{

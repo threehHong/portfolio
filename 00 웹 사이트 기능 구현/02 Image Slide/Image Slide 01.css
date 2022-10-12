@@ -32,16 +32,19 @@ img{
 } */
 
 .prev-arrow, .next-arrow{
-    /* position: absolute; */
-    position: relative;
-    top: 50%;
+    position: absolute;
+    /* position: relative; */
+    top: 45%;
     font-size: 50px;
     font-weight: bold;
     cursor: pointer;
     user-select: none;
 }
 .next-arrow{
-    left: 93%;
+    right: 0%;
+}
+.preve-arrow:hover, .next-arrow:hover{
+    color: #717171;
 }
 
 .slide{

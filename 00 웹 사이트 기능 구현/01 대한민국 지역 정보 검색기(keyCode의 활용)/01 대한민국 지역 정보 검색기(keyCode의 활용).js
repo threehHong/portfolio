@@ -5,8 +5,9 @@ function local(event) {
         console.log("지역 안내 함수 실행")
         // 2. input 태그 불러오기.
         let local = document.querySelector(".local");
-        // 3. input 태그에 입력된 데이터 저장.
+        // 3. input 태그에 입력된 데이터 저장 및 input 태그에 입력한 내용 지우기.
         let localName = local.value;
+        local.value = "";
         // 4.입력된 지역명 확인(콘솔) .
         console.log(`지역명 : ${localName}`);
         // 5. h2 태그 불러오기.
@@ -208,6 +209,7 @@ function local(event) {
 
         // 9. h1(.info) 태그에 등록되지 않은 지엽입니다 or localName 출력.
         info.innerText = info1;
+
     }
 }
 

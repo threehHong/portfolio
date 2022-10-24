@@ -1,0 +1,663 @@
+/******************** body > header(navigationbar) ********************/
+*{
+    font-size: 18px;
+    /* text-transform: uppercase; */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.title{
+    text-transform: uppercase;
+}
+body{
+    margin-top: 70px; /* posisition: fixed를 할 경우 
+    브랜드, 아이콘, 메뉴가 사라지기 때문에 사용 */
+}
+.header{
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+/* .header > .nav > .head-brand {
+    text-transform: none;
+} */
+
+@media(min-width: 992px){
+    .header > .nav{
+    max-width: 1000px;
+    margin: 0 auto;
+    }
+}
+.nav{
+    background-color: white;
+}
+.head-brand{
+    font-size: 32px;
+    position: relative;
+    height: 70px;
+    margin-left: 15px;
+    line-height: 70px;
+    cursor: pointer;
+}
+.head-icon{
+    font-size: 32px;
+    position: absolute;
+    /* left: 92%; */
+    right: 45px;
+    top: 10px;
+    cursor: pointer;
+}
+@media(min-width: 1030px){
+    .head-icon{
+        display: none;
+    }
+}
+.nav-menu{
+    list-style: none;
+    float: right;
+    line-height: 70px;
+    z-index: 1;
+}
+.nav-item{
+    display: inline-block;
+    margin-right: 40px;
+}
+.nav-item-a{
+    cursor: pointer;
+}
+@media(max-width: 1029px){
+    .nav-menu{
+        float: none;
+        position: absolute;
+        width: 100%; /* 여기서 100%는 1000 1000은 맞춰야 한다 다른 기준에 기준 1000을 유동적으로 바꿔야 한다. */
+    }
+    .nav-menu > .nav-item{
+        display: none;
+    }
+    /* .show{
+        position: absolute;
+        transition: 0.5s ease;
+    } */
+    .show > .nav-item{
+    display: block;
+    position: relative;
+    width: 100%;
+    top: 99%;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+    opacity: .5;
+    }
+    .show > .nav-item > .nav-item-a{
+    position: relative;
+    padding: 0;
+    left: 15px;
+    /* cursor: pointer; */
+    }
+}
+
+/******************** body > section > imageslide ********************/
+img{
+    width: 100%;
+    height: 100%;
+    /* display: block; */
+    /* display: block;으로인해 이미지 사이에 빈공간 없어짐 
+        div태그 내부에 img태그 형태 2개에 넣어진  이미지 사이에서 발생 할 때*/
+}
+.section > .welcome > .container > .image > img{
+    display: block;
+    height: 666px;
+}
+.section{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.welcome{
+    height: auto;
+}
+.section > .welcome > .container{
+    position: relative; /* 여기서 position: relative;를 주고 아이콘을
+    누르면 메뉴창이 나오지 않는 이유는 추후 탐구 및 정리 */
+    height: 100%;
+}
+.prev-arrow, .next-arrow{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+}
+.next-arrow{
+    right: 0%;
+}
+.prev-arrow, .next-arrow{
+    font-size: 32px;
+    color: black;
+} 
+.prev-arrow:hover, .next-arrow:hover{
+    color: #717171;
+    transition: 0.6s ease;
+}
+
+.dots{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    text-align: center;
+}
+.dot{
+    display: inline-block;
+    cursor: pointer;
+    height: 4px;
+    width: 30px;
+    margin: 0 2px;
+    background-color: black;
+}
+.dot:hover, .dot.active{
+    background-color: #717171;
+}
+
+/******************** body > section > INTRODUCE ********************/
+section{
+    padding: 100px 0;
+}
+
+.title{
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding-bottom: 90px;
+    text-align: center;
+}
+
+.title::after{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 10px;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, royalblue, aquamarine); /* 이 부분 다른 색으로 변경헤보기 */
+}
+
+.introduce{
+    height: auto;
+    position: relative;
+    /* padding: 0 auto; */
+}
+
+.introduce > .picture{
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(min-width: 1030px){
+    .introduce > .picture{
+        width: calc(40% - 50px); /* 40px 하면 안된다. 왜 그런거지? */
+        display: inline-block;
+    }
+}
+
+.introduce > .picture > img{
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 15px;
+}
+
+.introduce > .picture > .name{
+    font-size: 25px;
+    /* text-align: center; */
+    padding: 15px 0;
+}
+
+.introduce > .picture > .description{
+    font-size: 14px;
+   /*  font-family: 'Noto Sans KR', sans-serif; */
+}
+
+.introduce > .text{
+    display: block;
+    padding: 30px;
+}
+
+@media(min-width: 1030px){
+    .introduce > .text{
+        width: calc(60% - 100px);
+        display: inline-block;
+        padding: 0 50px;
+    }
+}
+
+.introduce > text * {
+    font-size: 16px;
+}
+
+.introduce > .text > .introduction{
+    padding: 20px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 1px;
+}
+
+.introduce > .text > ul{
+    padding: 20px 0;
+}
+
+.introduce > .text > ul > li{
+    height: 40px;
+}
+
+.introduce > .text > ul > li > .info{
+    color: #777;
+}
+
+.introduce > .text > ul > li > .info > i{
+    color: royalblue;
+}
+
+.introduce > .text > .sns{
+    text-align: right;;
+}
+
+@media(min-width: 1030px){
+    .introduce > .text > .sns{
+        text-align: left;
+    }
+}
+
+.introduce > .text > .sns > a{
+    width: 50px;
+    line-height: 50px;
+    background-color: #eee;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.introduce > .text > .sns > a:hover{
+    background-image: linear-gradient(to right, royalblue, aquamarine);
+}
+
+/******************** body > section > CAREER ********************/
+.career {
+    /* font-size: 32px; */
+    height: auto;
+    background-color: #f9f9ff;
+}
+
+.career > .container {
+    text-align: center;
+}
+
+.career > .container > .career-list {
+    height: auto;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    text-align: left;
+    transition: all 0.5s ease;
+}
+
+.career > .container > .career-list:hover{
+    transform: scale(1.015);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* .career > .container > .item > .icon {
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.career > .container > .item > .icon > span > i {
+    font-size: 48px;
+    color: #aaa;
+} */
+
+.career > .container > .career-list > .eccl {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.career > .container > .career-list > .content {
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 1.5px;
+    padding: 10px 0;
+}
+
+/******************** body > section > PORTFOLIO AREA ********************/
+.portfolio-area{
+    height: auto;
+}
+
+.portfolio-area > .filter > .list{
+    text-align: center;
+}
+
+.portfolio-area > .filter > .list > .listItem{
+    display: inline-block;
+    font-weight: bold;
+    padding: 0 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.portfolio-area > .filter > .list > .listItem:hover,
+.portfolio-area > .filter > .list > .listItem.active { /* active 클래스 추가할 경우 */
+    color: royalblue; /* all 태그에 acitve 클래스 적용되어 있으므로 all 태그에만 색깔 적용됨. */
+}
+
+.portfolio-area > .container {
+    padding-top: 50px;
+}
+
+.portfolio-area > .container > .filterItem {
+    display: none; /* 소스 작성할 동안은 inline-block, 완성 후 none */
+    width: calc(100% - 40px);
+    margin: 20px;
+    text-align: center;
+}
+
+/* 화면 가로 사이즈 1030px 이상일 때 한 줄에 사진 두 장씩 배치 */
+@media(min-width: 1030px){ 
+    .portfolio-area > .container > .filterItem {
+        width: calc(50% - 45px);
+    }
+}
+
+.portfolio-area > .container > .filterItem.show {
+    display: inline-block; /* show 태그 추가되었을 떄 */
+}
+
+.portfolio-area > .container > .filterItem > .portfolioImage {
+    position: relative;
+    max-height: 700px;
+    /* cursor: pointer; */
+}
+
+/* 화면 가로 사이즈 1030px 이상일 때 .portfolioImage의 img 높이 300px */
+@media(min-width: 1030px){
+    .portfolio-area > .container > .filterItem > .portfolioImage{
+        height: 300px;
+    }
+
+}
+.portfolio-area > .container > .filterItem > .portfolioImage > .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.portfolio-area > .container > .filterItem > .portfolioImage:hover > .overlay {
+    background-image: linear-gradient(to right, royalblue, aquamarine);
+    opacity: 0.9;
+}
+
+.portfolio-area > .container > .filterItem > .portfolioImage:hover > .overlay > i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.portfolio-area > .container > .filterItem > .portfolioImage > img {
+    border-radius: 5px;
+}
+
+.portfolio-area > .container > .filterItem > .main {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 0;;
+}
+
+.portfolio-area > .container > .filterItem > .sub {
+    font-size: 16px;
+    color: #777;
+}
+
+.portfolio-area > .container > .filterItem > .text {
+    display: none;
+}
+
+#portfolioModal {
+    display: none; /* 작업시에는 block */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    overflow: hidden;
+}
+
+#portfolioModal > .close {
+    /* display: inline-block; */
+    display: block;
+    /* display: flex;
+    float: right; */
+    text-align: right;
+    color: #f1f1f1;
+    font-size: 48px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+#portfolioModal > .close:hover,
+#portfolioModal > .close:focus{
+    color: #aba;
+}
+
+#portfolioModal > .container {
+   /*  position: absolute; */
+    width: 100%;
+    height: auto;
+   /*  top: 20px; */
+
+}
+
+#portfolioModal > .container > img {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+@media (min-width: 600px) {
+    #portfolioModal > .container > img {
+        max-width: 600px;
+    }
+}
+
+#portfolioModal > .container > .modal-main{
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    padding: 5px 0;
+}
+#portfolioModal > .container > .modal-sub{
+    font-size: 20px;
+    color: white;
+    padding: 5px 0;
+}
+#portfolioModal > .container > .modal-text{
+    font: 16px;
+    color: #bbb;
+    padding-top: 5px;
+    /* line-height: 30px; */
+}
+
+/******************** body > section > ETC ********************/
+.etc {
+    height: auto;
+    background-color: #f9f9ff;
+}
+
+.etc > .container {
+    position: relative;
+    text-align: center;;
+    margin: 20px;
+    margin-bottom: 7px;
+    padding: 20px;
+    background-color: white;
+}
+
+@media(min-width: 1030px){
+    .etc > .container {
+        padding: 20px 0;
+    }
+}
+
+.etc > .container > .etc-prev,
+.etc > .container > .etc-next {
+    display: inline-block;
+    position: absolute;
+    color: gray;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    /* padding: 10px; */
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.6s ease;
+    
+}
+
+.etc > .container > .etc-prev {
+    left : 0;
+}
+
+.etc > .container > .etc-next {
+    right: 0;
+}
+
+.etc > .container > .etc-prev:hover,
+.etc > .container > .etc-next:hover {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.etc > .container > .etc-slide {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+
+}
+
+@media(min-width: 1030px) {
+    .etc > .container > .etc-slide{
+        width: 300px;
+    }    
+}
+
+.etc > .container > .etc-slide.res-show {
+    display: inline-block;
+}
+
+.etc > .container > .etc-slide.show {
+    display: none;
+}
+
+@media(min-width: 1030px) {
+    .etc > .container > .etc-slide.show {
+        display: inline-block;
+    }
+}
+
+.etc > .container > .etc-slide.hide {
+    display: none;
+}
+
+.etc > .container > .etc-slide > .review-image {
+    display: inline-block;
+}
+
+.etc > .container > .etc-slide > .review-image > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.etc > .container > .etc-slide > .name {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.etc > .container > .etc-slide > .job {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.etc > .container > .etc-slide > .text {
+    padding: 30px;
+    height: 200px
+}
+
+.etc > .container > .etc-slide > .text > i {
+    font-size: 16px;
+    color: gray;
+}
+
+.etc > .container > .etc-slide > .rating {
+    text-align: right;
+    padding: 10px
+}
+
+.etc > .container > .etc-slide > .rating > span {
+    font-size: 14px;
+    color: orange;
+}
+
+.etc > .container > .etc-slide > .name  > a {
+    text-decoration: none;
+    color: black;
+}
+
+.etc > .stop { 
+    text-align: center;
+}
+
+.etc > .stop > i {
+    cursor: pointer;
+}
+
+/******************** body > footer area ********************/
+.footer-area {
+    height: auto;
+    text-align: center;
+    background-color: black;
+}
+
+.footer-area * { /* 에스더리스크 *는 .footer-area의 모든 자식태그에 적용시킨다는 의미 */
+    color: white;
+}
+
+.footer-area > .sns > .item {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.footer-area > .info > p {
+    font-size: 16px;
+    padding: 10px 0;
+}
